@@ -8,7 +8,7 @@ class User extends React.Component {
     }
 
     fetchData() {
-        fetch(`https://api.github.com/users/${this.props.params.username}`)
+        fetch(`https://api.github.com/users/${this.props.params.username}?access_token=c928d47fdada7099bc8e145e17acc48e714f0c73`)
         .then(response => response.json())
         .then(
             user => {

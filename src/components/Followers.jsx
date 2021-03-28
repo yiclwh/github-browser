@@ -18,7 +18,7 @@ class Followers extends React.Component {
 			 return;
 		  }
         this.state.isLoading = true;
-        var url = `https://api.github.com/users/${this.props.params.username}/followers?page=${this.state.page}&per_page=50`;
+        var url = `https://api.github.com/users/${this.props.params.username}/followers?access_token=c928d47fdada7099bc8e145e17acc48e714f0c73&page=${this.state.page}&per_page=50`;
   
         fetch(url)
         .then(response => response.json())
