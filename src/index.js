@@ -1,17 +1,28 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import App from './components/App';
+import Search from './components/Search';
+import User from './components/User';
+import Followers from './components/Followers';
+import Following from './components/Following';
+import Repos from './components/Repos';
+import 'semantic-ui-css/semantic.min.css'
+
+const routes = (
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Search}/>
+            <Route path="user/:username" component={User}>
+                <Route path="followers" component={Followers} />
+                <Route path="following" component={Following} />
+                <Route path="repos" component={Repos} />
+            </Route>
+        </Route>
+    </Router>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(routes, document.getElementById('root'));
