@@ -75,6 +75,9 @@ class User extends React.Component {
                         <p className="user-info_location">Location: {user.location}</p>
                         <p className="user-created_at">First Join: {user.created_at}</p>
                         <p className="user-updated_at">Last Update: {user.updated_at}</p>
+                        <a href={user.html_url}>
+                            <p>Profile On Github</p>
+                        </a>
                     </Link>
 
                     <ul className="user-info__stats">

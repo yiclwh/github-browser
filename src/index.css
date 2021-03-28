@@ -69,7 +69,7 @@
   font-size: 20px;
 }
 
-.user-info__text, .user-info__email, .user-created_at, .user-updated_at {
+.user-info__text, .user-info__email, .user-created_at, .user-updated_at, .user-link {
   margin: 0;
   white-space: nowrap;
   font-size: 15px;
